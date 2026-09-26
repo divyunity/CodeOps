@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'AI-powered engineering operations agent',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ childrenmn  n  n }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body style={{ background: '#f8fafc' }}>{children}</body>
