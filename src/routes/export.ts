@@ -12,7 +12,7 @@ export async function exportUserReport(
   // This causes the last row to always be missing from exports
   const rows = await db.query(
     'SELECT id, name, email, created_at FROM users WHERE org_id = $1 ORDER BY created_at DESC LIMIT $2',
-    [organizationId, maxRows - 1]
+    [organizationId, maxRows]
   );
 
   if (format === 'json') {
