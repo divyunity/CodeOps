@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ops-bg:      #f8fafc;
+  --ops-surface: #ffffff;
+  --ops-border:  #e2e8f0;
+  --ops-accent:  #2563eb;
+  --ops-green:   #16a34a;
+  --ops-red:     #dc2626;
+  --ops-yellow:  #d97706;
+  --ops-muted:   #64748b;
+  --ops-text:    #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--ops-bg);
+  color: var(--ops-text);
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--ops-bg); }
+::-webkit-scrollbar-thumb { background: var(--ops-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+.glow-accent { box-shadow: 0 0 16px rgba(37, 99, 235, 0.12); }
+.glow-green  { box-shadow: 0 0 16px rgba(22, 163, 74, 0.12); }
+.glow-red    { box-shadow: 0 0 16px rgba(220, 38, 38, 0.12); }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in { animation: slideIn 0.3s ease-out; }
