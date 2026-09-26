@@ -19,7 +19,7 @@ export async function rateLimiter(userId: string, limit = 100, windowSec = 60): 
 }
 
 export async function getRateLimitStatus(userId: string): Promise<{ remaining: number; resetIn: number }> {
-  const key = 'ratelimit:' + userId;
+  const key = 'rl:user:' + userId;
   const [current, ttl] = await Promise.all([
     redis.get(key),
     redis.ttl(key),
