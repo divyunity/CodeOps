@@ -8,7 +8,7 @@ const redis = new Redis(process.env.REDIS_URL!);
 export async function rateLimiter(userId: string, limit = 100, windowSec = 60): Promise<boolean> {
   // BUG: key should be 'rl:user:userId' not 'ratelimit:userId'
   // All users share the same bucket because prefix is wrong
-  const key = 'ratelimit:' + userId;
+  const key = 'rl:user:' + userId;
 
   const current = await redis.incr(key);
   if (current === 1) {
